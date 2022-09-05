@@ -148,9 +148,9 @@ def i_help(name='pass generator'):
 
 def main():
     if sys_plat() == 'Linux':
-        print('\033[36mMade by AG\033[0m')
+        print('\033[36mMade by Alex13aa\033[0m')
     else:
-        print('Made by AG')
+        print('Made by Alex13aa')
     err = load_dictionary()
     if not err:
         err = give_options(sys.argv)
