@@ -4,6 +4,12 @@ from random import random
 from platform import system as sys_plat
 import pickle
 
+# # # # # # # # # # # # # # # # # # # # # # # #
+# 
+#      Author this software it's Alex13aa     #
+# 
+# # # # # # # # # # # # # # # # # # # # # # # #
+
 
 class Error(Exception):
     def __init__(self, text='Unknown Exception', description=''):
