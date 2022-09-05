@@ -1,7 +1,7 @@
-#!/bin/python3
 import sys
 import os
 from random import random
+from platform import system as sys_plat
 import pickle
 
 
@@ -14,7 +14,10 @@ class Error(Exception):
             self.description = description
 
     def __str__(self):
-        return '\n\033[41m{}:\033[0;31m\ndetails:\n{}\033[0m'.format(self.text, self.description)
+        if sys_plat() == 'Linux':
+            return '\n\033[41m{}:\033[0;31m\ndetails:\n{}\033[0m'.format(self.text, self.description)
+        else:
+            return '\n{}:\ndetails:\n{}'.format(self.text, self.description)
 
 
 class LengthError(Error):
@@ -144,7 +147,10 @@ def i_help(name='pass generator'):
 
 
 def main():
-    print('\033[36mMade by AG\033[0m')
+    if sys_plat() == 'Linux':
+        print('\033[36mMade by AG\033[0m')
+    else:
+        print('Made by AG')
     err = load_dictionary()
     if not err:
         err = give_options(sys.argv)
